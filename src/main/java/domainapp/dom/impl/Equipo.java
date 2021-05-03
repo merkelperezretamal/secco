@@ -24,18 +24,7 @@ import javax.jdo.annotations.VersionStrategy;
 
 import com.google.common.collect.ComparisonChain;
 
-import org.apache.isis.applib.annotation.Action;
-import org.apache.isis.applib.annotation.Auditing;
-import org.apache.isis.applib.annotation.CommandReification;
-import org.apache.isis.applib.annotation.DomainObject;
-import org.apache.isis.applib.annotation.DomainObjectLayout;
-import org.apache.isis.applib.annotation.Editing;
-import org.apache.isis.applib.annotation.Parameter;
-import org.apache.isis.applib.annotation.ParameterLayout;
-import org.apache.isis.applib.annotation.Property;
-import org.apache.isis.applib.annotation.Publishing;
-import org.apache.isis.applib.annotation.SemanticsOf;
-import org.apache.isis.applib.annotation.Title;
+import org.apache.isis.applib.annotation.*;
 import org.apache.isis.applib.services.message.MessageService;
 import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
@@ -62,10 +51,12 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private String denominacion;
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @Property(hidden = Where.EVERYWHERE)
     @Getter @Setter
     private String modelo;
 
@@ -92,6 +83,10 @@ public class Equipo implements Comparable<Equipo> {
         return getModelo();
     }
 
+    @Property(notPersisted = true) //Agregado como propiedad derivada
+    public String getName() {
+        return getDenominacion() + " " + getModelo();
+    }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE)
     public void delete() {

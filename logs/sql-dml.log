@@ -1,7 +1,3 @@
-2021-05-03 13:57:18.061 SELECT 'domainapp.dom.impl.Equipo' AS "NUCLEUS_TYPE","A0"."denominacion","A0"."modelo","A0"."notes","A0"."id","A0"."version" FROM "secco"."Equipo" "A0"
-2021-05-03 13:57:39.381 INSERT INTO "secco"."Equipo" ("denominacion","modelo","notes","version") VALUES (<'EQ002'>,<'M3'>,<null>,<2021-05-03 13:57:39.38>)
-2021-05-03 13:57:39.646 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
-2021-05-03 13:57:50.999 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
-2021-05-03 13:57:57.387 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
-2021-05-03 13:57:57.459 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
-2021-05-03 13:57:57.537 UPDATE "secco"."Equipo" SET "denominacion"=<'EQ003'>, "version"=<2021-05-03 13:57:57.537> WHERE "id"=<0>
+2021-05-03 14:28:01.756 INSERT INTO "secco"."Equipo" ("denominacion","modelo","notes","version") VALUES (<'EQ002'>,<'M3'>,<null>,<2021-05-03 14:28:01.755>)
+2021-05-03 14:28:02.188 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-03 14:28:04.052 SELECT "A0"."denominacion","A0"."modelo","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
