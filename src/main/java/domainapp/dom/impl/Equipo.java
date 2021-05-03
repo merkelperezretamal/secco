@@ -32,6 +32,9 @@ import org.apache.isis.applib.services.title.TitleService;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "secco" )
 @javax.jdo.annotations.DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
@@ -41,9 +44,16 @@ import lombok.Setter;
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Equipo implements Comparable<Equipo> {
 
-    public Equipo(final String denominacion, final String modelo) {
+    public Equipo(final String denominacion,
+                  final String modelo,
+                  final double horometro,
+                  final double horasProximoMantenimiento,
+                  final LocalDate fechaUltimoMantenimiento) {
         this.denominacion = denominacion;
         this.modelo = modelo;
+        this.horometro = horometro;
+        this.horasProximoMantenimiento = horasProximoMantenimiento;
+        this.fechaUltimoMantenimiento = fechaUltimoMantenimiento;
     }
 
     public String title() {
@@ -60,6 +70,21 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     private String modelo;
 
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property(hidden = Where.EVERYWHERE)
+    @Getter @Setter
+    private double horometro;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property(hidden = Where.EVERYWHERE)
+    @Getter @Setter
+    private double horasProximoMantenimiento;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Property(hidden = Where.EVERYWHERE)
+    @Getter @Setter
+    private LocalDate fechaUltimoMantenimiento;
+
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
     @Getter @Setter
@@ -71,9 +96,14 @@ public class Equipo implements Comparable<Equipo> {
             @Parameter(maxLength = 40)
             final String denominacion,
             @Parameter(maxLength = 40)
-            final String modelo) {
+            final String modelo,
+//            @Parameter(maxLength = 40)
+            final double horometro,
+            final LocalDate fechaUltimoMantenimiento) {
         setDenominacion(denominacion);
         setModelo(modelo);
+        setHorometro(horometro);
+        setFechaUltimoMantenimiento(fechaUltimoMantenimiento);
         return this;
     }
     public String default0UpdateName() {
@@ -81,6 +111,9 @@ public class Equipo implements Comparable<Equipo> {
     }
     public String default1UpdateName() {
         return getModelo();
+    }
+    public double default2UpdateName() {
+        return getHorometro();
     }
 
     @Property(notPersisted = true) //Agregado como propiedad derivada

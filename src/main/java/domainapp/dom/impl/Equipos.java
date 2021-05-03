@@ -18,6 +18,9 @@
  */
 package domainapp.dom.impl;
 
+
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.datanucleus.query.typesafe.TypesafeQuery;
@@ -45,8 +48,14 @@ public class Equipos {
             @Parameter(maxLength = 40)
             final String denominacion,
             @Parameter(maxLength = 40)
-            final String modelo) {
-        return repositoryService.persist(new Equipo(denominacion, modelo));
+            final String modelo,
+            @Parameter(maxLength = 40)
+            final double horometro,
+            @Parameter(maxLength = 40)
+            final double horasProximoMantenimiento,
+            @Parameter(maxLength = 40)
+            final LocalDate fechaUltimoMantenimiento) {
+        return repositoryService.persist(new Equipo(denominacion, modelo, horometro, horasProximoMantenimiento, fechaUltimoMantenimiento));
     }
 
     @Action(semantics = SemanticsOf.SAFE)

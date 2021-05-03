@@ -20,6 +20,8 @@ package domainapp.dom.impl;
 
 import org.junit.Test;
 
+import java.time.LocalDate;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class EquipoTest_updateName {
@@ -27,12 +29,13 @@ public class EquipoTest_updateName {
     @Test
     public void happy_case() throws Exception {
         // given
-        final Equipo object = new Equipo("EQ001", "M1");
+        LocalDate ld = LocalDate.of(2021, 02, 25);
+        final Equipo object = new Equipo("EQ001", "M1", 0, 0, ld);
         assertThat(object.getDenominacion()).isEqualTo("EQ001");
         assertThat(object.getModelo()).isEqualTo("M1");
 
         // when
-        object.updateName("EQ002", "M1");
+        object.updateName("EQ002", "M1", 0, ld);
 
         // then
         assertThat(object.getDenominacion()).isEqualTo("EQ002");

@@ -28,6 +28,8 @@ import org.apache.isis.applib.services.repository.RepositoryService;
 import org.apache.isis.applib.services.title.TitleService;
 import org.apache.isis.core.unittestsupport.jmocking.JUnitRuleMockery2;
 
+import java.time.LocalDate;
+
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class EquipoTest_delete {
@@ -46,9 +48,9 @@ public class EquipoTest_delete {
 
     @Test
     public void happy_case() throws Exception {
-
         // given
-        final Equipo object = new Equipo("EQ001", "M1");
+        LocalDate ld = LocalDate.of(2021, 02, 25);
+        final Equipo object = new Equipo("EQ001", "M1", 0, 0, ld);
         object.titleService = mockTitleService;
         object.messageService = mockMessageService;
         object.repositoryService = mockRepositoryService;
