@@ -57,7 +57,6 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Property(editing = Editing.DISABLED)
     @Title(prepend = "Object: ")
     @Getter @Setter
     private String name;

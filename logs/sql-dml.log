@@ -1,0 +1,1 @@
+2021-05-03 12:57:08.076 SELECT 'domainapp.dom.impl.Equipo' AS "NUCLEUS_TYPE","A0"."name","A0"."notes","A0"."id","A0"."version" FROM "secco"."Equipo" "A0"
