@@ -1,39 +1,39 @@
-2021-05-03 14:22:46.948 La columna ""DELETEME1620062566941"."UNUSED"" añadió a la representación de la table.
-2021-05-03 14:22:46.955 Crear la tabla "DELETEME1620062566941"
-2021-05-03 14:22:46.960 CREATE TABLE "DELETEME1620062566941"
+2021-05-03 15:02:11.085 La columna ""DELETEME1620064931075"."UNUSED"" añadió a la representación de la table.
+2021-05-03 15:02:11.092 Crear la tabla "DELETEME1620064931075"
+2021-05-03 15:02:11.096 CREATE TABLE "DELETEME1620064931075"
 (
     "UNUSED" INTEGER NOT NULL
 )
-2021-05-03 14:22:46.963 Tiempo de cumplir = 2 ms
-2021-05-03 14:22:46.979 Borrar la tabla "DELETEME1620062566941"
-2021-05-03 14:22:46.979 DROP TABLE "DELETEME1620062566941"
-2021-05-03 14:22:46.980 Tiempo de cumplir = 1 ms
-2021-05-03 14:22:47.436 La columna ""DELETEME1620062567436"."UNUSED"" añadió a la representación de la table.
-2021-05-03 14:22:47.436 Crear la tabla "DELETEME1620062567436"
-2021-05-03 14:22:47.437 CREATE TABLE "DELETEME1620062567436"
+2021-05-03 15:02:11.098 Tiempo de cumplir = 1 ms
+2021-05-03 15:02:11.114 Borrar la tabla "DELETEME1620064931075"
+2021-05-03 15:02:11.114 DROP TABLE "DELETEME1620064931075"
+2021-05-03 15:02:11.115 Tiempo de cumplir = 1 ms
+2021-05-03 15:02:11.607 La columna ""DELETEME1620064931607"."UNUSED"" añadió a la representación de la table.
+2021-05-03 15:02:11.607 Crear la tabla "DELETEME1620064931607"
+2021-05-03 15:02:11.608 CREATE TABLE "DELETEME1620064931607"
 (
     "UNUSED" INTEGER NOT NULL
 )
-2021-05-03 14:22:47.438 Tiempo de cumplir = 1 ms
-2021-05-03 14:22:47.441 Borrar la tabla "DELETEME1620062567436"
-2021-05-03 14:22:47.441 DROP TABLE "DELETEME1620062567436"
-2021-05-03 14:22:47.442 Tiempo de cumplir = 0 ms
-2021-05-03 14:22:47.549 La columna ""secco"."Equipo"."id"" añadió a la representación de la table.
-2021-05-03 14:22:47.551 Campo [DATASTORE_ID] -> Columnas ["secco"."Equipo"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
-2021-05-03 14:22:47.555 La tabla "secco"."Equipo" va a manejar la persistencia de los campos de la clase domainapp.dom.impl.Equipo (estrategia de heredar="new-table")
-2021-05-03 14:22:47.556 La columna ""secco"."Equipo"."denominacion"" añadió a la representación de la table.
-2021-05-03 14:22:47.559 Campo [domainapp.dom.impl.Equipo.denominacion] -> Columnas ["secco"."Equipo"."denominacion"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-2021-05-03 14:22:47.561 La columna ""secco"."Equipo"."modelo"" añadió a la representación de la table.
-2021-05-03 14:22:47.561 Campo [domainapp.dom.impl.Equipo.modelo] -> Columnas ["secco"."Equipo"."modelo"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-2021-05-03 14:22:47.562 La columna ""secco"."Equipo"."notes"" añadió a la representación de la table.
-2021-05-03 14:22:47.562 Campo [domainapp.dom.impl.Equipo.notes] -> Columnas ["secco"."Equipo"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
-2021-05-03 14:22:47.563 La columna ""secco"."Equipo"."version"" añadió a la representación de la table.
-2021-05-03 14:22:47.564 Campo [VERSION] -> Columnas ["secco"."Equipo"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
-2021-05-03 14:22:47.564 Table/View "secco"."Equipo" ha sido inicializado
-2021-05-03 14:22:47.566 Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4950116" y isolacion "serializable"
-2021-05-03 14:22:47.570 Check of existence of "secco"."Equipo" returned no table
-2021-05-03 14:22:47.570 Crear la tabla "secco"."Equipo"
-2021-05-03 14:22:47.571 CREATE TABLE "secco"."Equipo"
+2021-05-03 15:02:11.609 Tiempo de cumplir = 0 ms
+2021-05-03 15:02:11.613 Borrar la tabla "DELETEME1620064931607"
+2021-05-03 15:02:11.613 DROP TABLE "DELETEME1620064931607"
+2021-05-03 15:02:11.614 Tiempo de cumplir = 1 ms
+2021-05-03 15:02:11.724 La columna ""secco"."Equipo"."id"" añadió a la representación de la table.
+2021-05-03 15:02:11.726 Campo [DATASTORE_ID] -> Columnas ["secco"."Equipo"."id"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.DatastoreIdMapping" (org.datanucleus.store.rdbms.mapping.datastore.BigIntRDBMSMapping)
+2021-05-03 15:02:11.730 La tabla "secco"."Equipo" va a manejar la persistencia de los campos de la clase domainapp.dom.impl.Equipo (estrategia de heredar="new-table")
+2021-05-03 15:02:11.731 La columna ""secco"."Equipo"."denominacion"" añadió a la representación de la table.
+2021-05-03 15:02:11.734 Campo [domainapp.dom.impl.Equipo.denominacion] -> Columnas ["secco"."Equipo"."denominacion"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+2021-05-03 15:02:11.735 La columna ""secco"."Equipo"."modelo"" añadió a la representación de la table.
+2021-05-03 15:02:11.735 Campo [domainapp.dom.impl.Equipo.modelo] -> Columnas ["secco"."Equipo"."modelo"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+2021-05-03 15:02:11.737 La columna ""secco"."Equipo"."notes"" añadió a la representación de la table.
+2021-05-03 15:02:11.738 Campo [domainapp.dom.impl.Equipo.notes] -> Columnas ["secco"."Equipo"."notes"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.StringMapping" (org.datanucleus.store.rdbms.mapping.datastore.VarCharRDBMSMapping)
+2021-05-03 15:02:11.741 La columna ""secco"."Equipo"."version"" añadió a la representación de la table.
+2021-05-03 15:02:11.741 Campo [VERSION] -> Columnas ["secco"."Equipo"."version"] usando mapping del tipo "org.datanucleus.store.rdbms.mapping.java.VersionTimestampMapping" (org.datanucleus.store.rdbms.mapping.datastore.TimestampRDBMSMapping)
+2021-05-03 15:02:11.742 Table/View "secco"."Equipo" ha sido inicializado
+2021-05-03 15:02:11.743 Empezando transaccion del esquema con conneccion "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@c96858e" y isolacion "serializable"
+2021-05-03 15:02:11.747 Check of existence of "secco"."Equipo" returned no table
+2021-05-03 15:02:11.747 Crear la tabla "secco"."Equipo"
+2021-05-03 15:02:11.748 CREATE TABLE "secco"."Equipo"
 (
     "id" BIGINT GENERATED BY DEFAULT AS IDENTITY,
     "denominacion" VARCHAR(40) NOT NULL,
@@ -42,9 +42,9 @@
     "version" TIMESTAMP NOT NULL,
     CONSTRAINT "Equipo_PK" PRIMARY KEY ("id")
 )
-2021-05-03 14:22:47.575 Tiempo de cumplir = 2 ms
-2021-05-03 14:22:47.579 Crear la llave unica "Equipo_denominacion_modelo_UNQ" en catalogo "" equema ""secco""
-2021-05-03 14:22:47.580 ALTER TABLE "secco"."Equipo" ADD CONSTRAINT "Equipo_denominacion_modelo_UNQ" UNIQUE ("denominacion","modelo")
-2021-05-03 14:22:47.582 Tiempo de cumplir = 2 ms
-2021-05-03 14:22:47.583 Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4950116"
-2021-05-03 14:22:47.584 Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@4950116"
+2021-05-03 15:02:11.751 Tiempo de cumplir = 1 ms
+2021-05-03 15:02:11.758 Crear la llave unica "Equipo_denominacion_modelo_UNQ" en catalogo "" equema ""secco""
+2021-05-03 15:02:11.759 ALTER TABLE "secco"."Equipo" ADD CONSTRAINT "Equipo_denominacion_modelo_UNQ" UNIQUE ("denominacion","modelo")
+2021-05-03 15:02:11.760 Tiempo de cumplir = 1 ms
+2021-05-03 15:02:11.761 Committing transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@c96858e"
+2021-05-03 15:02:11.761 Cerrando la conneccion de la transaccion del esquema "org.datanucleus.store.rdbms.datasource.dbcp.PoolingDataSource$PoolGuardConnectionWrapper@c96858e"

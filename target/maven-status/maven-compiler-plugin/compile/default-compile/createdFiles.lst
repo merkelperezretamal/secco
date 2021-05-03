@@ -1,7 +1,7 @@
-domainapp\webapp\HelloWorldApplication$1.class
 domainapp\dom\impl\Equipo.class
+domainapp\dom\SeccoModule.class
+domainapp\application\SeccoAppManifest.class
 domainapp\dom\impl\Equipos.class
 domainapp\dom\impl\QEquipo.class
-domainapp\application\HelloWorldAppManifest.class
-domainapp\dom\HelloWorldModule.class
-domainapp\webapp\HelloWorldApplication.class
+domainapp\webapp\SeccoApplication$1.class
+domainapp\webapp\SeccoApplication.class
