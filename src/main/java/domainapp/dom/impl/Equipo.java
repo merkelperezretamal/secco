@@ -47,19 +47,27 @@ import lombok.Setter;
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "secco" )
 @javax.jdo.annotations.DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="Equipo_name_UNQ", members = {"name"})
+@javax.jdo.annotations.Unique(name="Equipo_denominacion_modelo_UNQ", members = {"denominacion", "modelo"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Equipo implements Comparable<Equipo> {
 
-    public Equipo(final String name) {
-        this.name = name;
+    public Equipo(final String denominacion, final String modelo) {
+        this.denominacion = denominacion;
+        this.modelo = modelo;
+    }
+
+    public String title() {
+        return getDenominacion() + ", " + getModelo();
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Title(prepend = "Object: ")
     @Getter @Setter
-    private String name;
+    private String denominacion;
+
+    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
+    @Getter @Setter
+    private String modelo;
 
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
@@ -70,12 +78,18 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo updateName(
             @Parameter(maxLength = 40)
-            final String name) {
-        setName(name);
+            final String denominacion,
+            @Parameter(maxLength = 40)
+            final String modelo) {
+        setDenominacion(denominacion);
+        setModelo(modelo);
         return this;
     }
     public String default0UpdateName() {
-        return getName();
+        return getDenominacion();
+    }
+    public String default1UpdateName() {
+        return getModelo();
     }
 
 
@@ -88,13 +102,13 @@ public class Equipo implements Comparable<Equipo> {
 
     @Override
     public String toString() {
-        return getName();
+        return getDenominacion();
     }
 
     @Override
     public int compareTo(final Equipo other) {
         return ComparisonChain.start()
-                .compare(this.getName(), other.getName())
+                .compare(this.getDenominacion(), other.getDenominacion())
                 .result();
     }
 

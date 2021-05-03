@@ -27,20 +27,23 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
         return new QEquipo(Equipo.class, name, ExpressionType.VARIABLE);
     }
 
-    public final StringExpression name;
+    public final StringExpression denominacion;
+    public final StringExpression modelo;
     public final StringExpression notes;
 
     public QEquipo(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
-        this.name = new StringExpressionImpl(this, "name");
+        this.denominacion = new StringExpressionImpl(this, "denominacion");
+        this.modelo = new StringExpressionImpl(this, "modelo");
         this.notes = new StringExpressionImpl(this, "notes");
     }
 
     public QEquipo(Class type, String name, ExpressionType exprType)
     {
         super(type, name, exprType);
-        this.name = new StringExpressionImpl(this, "name");
+        this.denominacion = new StringExpressionImpl(this, "denominacion");
+        this.modelo = new StringExpressionImpl(this, "modelo");
         this.notes = new StringExpressionImpl(this, "notes");
     }
 }

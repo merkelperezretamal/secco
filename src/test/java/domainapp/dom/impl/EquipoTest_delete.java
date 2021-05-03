@@ -48,16 +48,16 @@ public class EquipoTest_delete {
     public void happy_case() throws Exception {
 
         // given
-        final Equipo object = new Equipo("Foo");
+        final Equipo object = new Equipo("EQ001", "M1");
         object.titleService = mockTitleService;
         object.messageService = mockMessageService;
         object.repositoryService = mockRepositoryService;
 
         // expecting
         context.checking(new Expectations() {{
-            allowing(mockTitleService).titleOf(object); will(returnValue("Foo"));
+            allowing(mockTitleService).titleOf(object); will(returnValue("EQ001, M1"));
 
-            oneOf(mockMessageService).informUser(with(containsString("'Foo' deleted")));
+            oneOf(mockMessageService).informUser(with(containsString("'EQ001, M1' deleted")));
             oneOf(mockRepositoryService).removeAndFlush(object);
         }});
 

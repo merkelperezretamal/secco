@@ -43,8 +43,10 @@ public class Equipos {
     @MemberOrder(sequence = "1")
     public Equipo create(
             @Parameter(maxLength = 40)
-            final String name) {
-        return repositoryService.persist(new Equipo(name));
+            final String denominacion,
+            @Parameter(maxLength = 40)
+            final String modelo) {
+        return repositoryService.persist(new Equipo(denominacion, modelo));
     }
 
     @Action(semantics = SemanticsOf.SAFE)
@@ -55,7 +57,9 @@ public class Equipos {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
         final QEquipo cand = QEquipo.candidate();
         q = q.filter(
-                cand.name.indexOf(q.stringParameter("name")).ne(-1)
+                cand.denominacion.indexOf(q.stringParameter("name")).ne(-1).or(
+                        cand.modelo.indexOf(q.stringParameter("name")).ne(-1)
+                )
         );
         return q.setParameter("name", name)
                 .executeList();

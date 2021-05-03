@@ -27,14 +27,17 @@ public class EquipoTest_updateName {
     @Test
     public void happy_case() throws Exception {
         // given
-        final Equipo object = new Equipo("Foo");
-        assertThat(object.getName()).isEqualTo("Foo");
+        final Equipo object = new Equipo("EQ001", "M1");
+        assertThat(object.getDenominacion()).isEqualTo("EQ001");
+        assertThat(object.getModelo()).isEqualTo("M1");
 
         // when
-        object.updateName("Bar");
+        object.updateName("EQ002", "M1");
 
         // then
-        assertThat(object.getName()).isEqualTo("Bar");
+        assertThat(object.getDenominacion()).isEqualTo("EQ002");
+        assertThat(object.getModelo()).isEqualTo("M1");
+
     }
 
 }
