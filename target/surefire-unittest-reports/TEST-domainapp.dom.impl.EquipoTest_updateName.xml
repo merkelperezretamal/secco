@@ -64,5 +64,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="happy_case" classname="domainapp.dom.impl.EquipoTest_updateName" time="0.047"/>
+  <testcase name="happy_case" classname="domainapp.dom.impl.EquipoTest_updateName" time="0.063"/>
 </testsuite>
