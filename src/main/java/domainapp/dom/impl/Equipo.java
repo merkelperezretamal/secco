@@ -71,7 +71,6 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo updateName(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
             final String name) {
         setName(name);
         return this;

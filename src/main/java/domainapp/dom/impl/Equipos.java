@@ -43,7 +43,6 @@ public class Equipos {
     @MemberOrder(sequence = "1")
     public Equipo create(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
             final String name) {
         return repositoryService.persist(new Equipo(name));
     }
@@ -52,7 +51,6 @@ public class Equipos {
     @MemberOrder(sequence = "2")
     public List<Equipo> findByName(
             @Parameter(maxLength = 40)
-            @ParameterLayout(named = "Name")
             final String name) {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
         final QEquipo cand = QEquipo.candidate();
