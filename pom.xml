@@ -149,13 +149,25 @@
             <type>pom</type>
         </dependency>
 
-
         <!-- TEST DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.isis.mavendeps</groupId>
             <artifactId>isis-mavendeps-testing</artifactId>
             <scope>test</scope>
             <type>pom</type>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.2</version>
         </dependency>
 
     </dependencies>
