@@ -34,7 +34,7 @@ public class EquipoTest_updateName {
         assertThat(object.getHorometro()).isEqualTo(0);
 
         // when
-        object.updateName("EQ002", 0);
+        object.actualizarHorometro(0);
 
         // then
         assertThat(object.getDenominacion()).isEqualTo("EQ002");

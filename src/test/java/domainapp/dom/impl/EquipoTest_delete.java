@@ -63,7 +63,7 @@ public class EquipoTest_delete {
         }});
 
         // when
-        object.delete();
+        object.borrar();
     }
 
 

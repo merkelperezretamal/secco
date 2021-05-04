@@ -55,12 +55,11 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private String denominacion;
 
     @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(hidden = Where.EVERYWHERE)
+//    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private double horometro;
 
@@ -71,15 +70,11 @@ public class Equipo implements Comparable<Equipo> {
 
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
-    public Equipo updateName(
-            @Parameter(maxLength = 40)
-            final String denominacion,
-//            @Parameter(maxLength = 40)
-            final double horometro) {
-        setDenominacion(denominacion);
+    public Equipo actualizarHorometro(final double horometro) {
         setHorometro(horometro);
         return this;
     }
+
     public String default0UpdateName() {
         return getDenominacion();
     }
@@ -87,13 +82,13 @@ public class Equipo implements Comparable<Equipo> {
         return getHorometro();
     }
 
-    @Property(notPersisted = true) //Agregado como propiedad derivada
-    public String getName() {
-        return getDenominacion();
-    }
+//    @Property(notPersisted = true) //Agregado como propiedad derivada
+//    public String getName() {
+//        return getDenominacion();
+//    }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE)
-    public void delete() {
+    public void borrar() {
         final String title = titleService.titleOf(this);
         messageService.informUser(String.format("'%s' deleted", title));
         repositoryService.removeAndFlush(this);

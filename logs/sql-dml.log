@@ -1,0 +1,2 @@
+2021-05-04 12:20:03.259 INSERT INTO "secco"."Equipo" ("denominacion","horometro","notes","version") VALUES (<'EQ002'>,<700.0>,<null>,<2021-05-04 12:20:03.258>)
+2021-05-04 12:20:03.836 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
