@@ -49,17 +49,16 @@ public class EquipoTest_delete {
     @Test
     public void happy_case() throws Exception {
         // given
-        LocalDate ld = LocalDate.of(2021, 02, 25);
-        final Equipo object = new Equipo("EQ001", "M1", 0, 0, ld);
+        final Equipo object = new Equipo("EQ001", 0);
         object.titleService = mockTitleService;
         object.messageService = mockMessageService;
         object.repositoryService = mockRepositoryService;
 
         // expecting
         context.checking(new Expectations() {{
-            allowing(mockTitleService).titleOf(object); will(returnValue("EQ001, M1"));
+            allowing(mockTitleService).titleOf(object); will(returnValue("EQ001"));
 
-            oneOf(mockMessageService).informUser(with(containsString("'EQ001, M1' deleted")));
+            oneOf(mockMessageService).informUser(with(containsString("'EQ001' deleted")));
             oneOf(mockRepositoryService).removeAndFlush(object);
         }});
 

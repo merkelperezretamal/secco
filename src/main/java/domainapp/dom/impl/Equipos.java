@@ -48,14 +48,8 @@ public class Equipos {
             @Parameter(maxLength = 40)
             final String denominacion,
             @Parameter(maxLength = 40)
-            final String modelo,
-            @Parameter(maxLength = 40)
-            final double horometro,
-            @Parameter(maxLength = 40)
-            final double horasProximoMantenimiento,
-            @Parameter(maxLength = 40)
-            final LocalDate fechaUltimoMantenimiento) {
-        return repositoryService.persist(new Equipo(denominacion, modelo, horometro, horasProximoMantenimiento, fechaUltimoMantenimiento));
+            final double horometro) {
+        return repositoryService.persist(new Equipo(denominacion, horometro));
     }
 
     @Action(semantics = SemanticsOf.SAFE)
@@ -66,9 +60,7 @@ public class Equipos {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
         final QEquipo cand = QEquipo.candidate();
         q = q.filter(
-                cand.denominacion.indexOf(q.stringParameter("name")).ne(-1).or(
-                        cand.modelo.indexOf(q.stringParameter("name")).ne(-1)
-                )
+                cand.denominacion.indexOf(q.stringParameter("name")).ne(-1)
         );
         return q.setParameter("name", name)
                 .executeList();

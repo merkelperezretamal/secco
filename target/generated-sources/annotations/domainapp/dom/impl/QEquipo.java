@@ -28,20 +28,14 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     }
 
     public final StringExpression denominacion;
-    public final StringExpression modelo;
     public final NumericExpression<Double> horometro;
-    public final NumericExpression<Double> horasProximoMantenimiento;
-    public final ObjectExpression<java.time.LocalDate> fechaUltimoMantenimiento;
     public final StringExpression notes;
 
     public QEquipo(PersistableExpression parent, String name, int depth)
     {
         super(parent, name);
         this.denominacion = new StringExpressionImpl(this, "denominacion");
-        this.modelo = new StringExpressionImpl(this, "modelo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.horasProximoMantenimiento = new NumericExpressionImpl<Double>(this, "horasProximoMantenimiento");
-        this.fechaUltimoMantenimiento = new ObjectExpressionImpl<java.time.LocalDate>(this, "fechaUltimoMantenimiento");
         this.notes = new StringExpressionImpl(this, "notes");
     }
 
@@ -49,10 +43,7 @@ public class QEquipo extends PersistableExpressionImpl<Equipo> implements Persis
     {
         super(type, name, exprType);
         this.denominacion = new StringExpressionImpl(this, "denominacion");
-        this.modelo = new StringExpressionImpl(this, "modelo");
         this.horometro = new NumericExpressionImpl<Double>(this, "horometro");
-        this.horasProximoMantenimiento = new NumericExpressionImpl<Double>(this, "horasProximoMantenimiento");
-        this.fechaUltimoMantenimiento = new ObjectExpressionImpl<java.time.LocalDate>(this, "fechaUltimoMantenimiento");
         this.notes = new StringExpressionImpl(this, "notes");
     }
 }

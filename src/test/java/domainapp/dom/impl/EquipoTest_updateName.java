@@ -29,17 +29,16 @@ public class EquipoTest_updateName {
     @Test
     public void happy_case() throws Exception {
         // given
-        LocalDate ld = LocalDate.of(2021, 02, 25);
-        final Equipo object = new Equipo("EQ001", "M1", 0, 0, ld);
+        final Equipo object = new Equipo("EQ001", 0);
         assertThat(object.getDenominacion()).isEqualTo("EQ001");
-        assertThat(object.getModelo()).isEqualTo("M1");
+        assertThat(object.getHorometro()).isEqualTo(0);
 
         // when
-        object.updateName("EQ002", "M1", 0, ld);
+        object.updateName("EQ002", 0);
 
         // then
         assertThat(object.getDenominacion()).isEqualTo("EQ002");
-        assertThat(object.getModelo()).isEqualTo("M1");
+        assertThat(object.getHorometro()).isEqualTo(0);
 
     }
 

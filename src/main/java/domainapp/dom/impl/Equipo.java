@@ -39,25 +39,19 @@ import java.util.Date;
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "secco" )
 @javax.jdo.annotations.DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
-@javax.jdo.annotations.Unique(name="Equipo_denominacion_modelo_UNQ", members = {"denominacion", "modelo"})
+@javax.jdo.annotations.Unique(name="Equipo_denominacion_UNQ", members = {"denominacion"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
 public class Equipo implements Comparable<Equipo> {
 
     public Equipo(final String denominacion,
-                  final String modelo,
-                  final double horometro,
-                  final double horasProximoMantenimiento,
-                  final LocalDate fechaUltimoMantenimiento) {
+                  final double horometro) {
         this.denominacion = denominacion;
-        this.modelo = modelo;
         this.horometro = horometro;
-        this.horasProximoMantenimiento = horasProximoMantenimiento;
-        this.fechaUltimoMantenimiento = fechaUltimoMantenimiento;
     }
 
     public String title() {
-        return getDenominacion() + ", " + getModelo();
+        return getDenominacion();
     }
 
     @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
@@ -65,25 +59,10 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     private String denominacion;
 
-    @javax.jdo.annotations.Column(allowsNull = "false", length = 40)
-    @Property(hidden = Where.EVERYWHERE)
-    @Getter @Setter
-    private String modelo;
-
     @javax.jdo.annotations.Column(allowsNull = "false")
     @Property(hidden = Where.EVERYWHERE)
     @Getter @Setter
     private double horometro;
-
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(hidden = Where.EVERYWHERE)
-    @Getter @Setter
-    private double horasProximoMantenimiento;
-
-    @javax.jdo.annotations.Column(allowsNull = "false")
-    @Property(hidden = Where.EVERYWHERE)
-    @Getter @Setter
-    private LocalDate fechaUltimoMantenimiento;
 
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
@@ -95,30 +74,22 @@ public class Equipo implements Comparable<Equipo> {
     public Equipo updateName(
             @Parameter(maxLength = 40)
             final String denominacion,
-            @Parameter(maxLength = 40)
-            final String modelo,
 //            @Parameter(maxLength = 40)
-            final double horometro,
-            final LocalDate fechaUltimoMantenimiento) {
+            final double horometro) {
         setDenominacion(denominacion);
-        setModelo(modelo);
         setHorometro(horometro);
-        setFechaUltimoMantenimiento(fechaUltimoMantenimiento);
         return this;
     }
     public String default0UpdateName() {
         return getDenominacion();
     }
-    public String default1UpdateName() {
-        return getModelo();
-    }
-    public double default2UpdateName() {
+    public double default1UpdateName() {
         return getHorometro();
     }
 
     @Property(notPersisted = true) //Agregado como propiedad derivada
     public String getName() {
-        return getDenominacion() + " " + getModelo();
+        return getDenominacion();
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE)
