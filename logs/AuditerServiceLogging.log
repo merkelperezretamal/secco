@@ -1,3 +1,6 @@
-2021-05-04 12:20:03.393 4ee6b59a-fba3-4d97-be50-354896ff3c45,0: secco.Equipo:0 by sven, denominacion: [NEW] -> EQ002
-2021-05-04 12:20:03.394 4ee6b59a-fba3-4d97-be50-354896ff3c45,0: secco.Equipo:0 by sven, horometro: [NEW] -> 700.0
-2021-05-04 12:20:03.394 4ee6b59a-fba3-4d97-be50-354896ff3c45,0: secco.Equipo:0 by sven, notes: [NEW] -> null
+2021-05-05 16:27:06.171 cc804783-bec8-4976-b602-78b46a472773,0: secco.Equipo:0 by sven, denominacion: [NEW] -> EQ002
+2021-05-05 16:27:06.172 cc804783-bec8-4976-b602-78b46a472773,0: secco.Equipo:0 by sven, horometro: [NEW] -> 0.0
+2021-05-05 16:27:06.172 cc804783-bec8-4976-b602-78b46a472773,0: secco.Equipo:0 by sven, motor: [NEW] -> null
+2021-05-05 16:27:06.172 cc804783-bec8-4976-b602-78b46a472773,0: secco.Equipo:0 by sven, notes: [NEW] -> null
+2021-05-05 16:27:13.415 7a7669a5-fd55-4520-8364-a592b421a32d,0: motors.Motor:0 by sven, equipo: [NEW] -> EQ002
+2021-05-05 16:27:13.416 7a7669a5-fd55-4520-8364-a592b421a32d,0: motors.Motor:0 by sven, tag: [NEW] -> M546

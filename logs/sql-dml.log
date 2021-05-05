@@ -1,2 +1,14 @@
-2021-05-04 12:20:03.259 INSERT INTO "secco"."Equipo" ("denominacion","horometro","notes","version") VALUES (<'EQ002'>,<700.0>,<null>,<2021-05-04 12:20:03.258>)
-2021-05-04 12:20:03.836 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:05.983 INSERT INTO "secco"."Equipo" ("denominacion","horometro","notes","version") VALUES (<'EQ002'>,<0.0>,<null>,<2021-05-05 16:27:05.982>)
+2021-05-05 16:27:06.600 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:08.707 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:09.897 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:11.009 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:12.765 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:13.366 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:13.374 INSERT INTO "motors"."Motor" ("equipoId","tag","version") VALUES (<0>,<'M546'>,<2021-05-05 16:27:13.374>)
+2021-05-05 16:27:13.598 SELECT "A0"."tag","A0"."version" FROM "motors"."Motor" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:13.608 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:13.625 SELECT "B0"."denominacion","B0"."horometro","B0"."notes","B0"."id","B0"."version","A0"."version" FROM "motors"."Motor" "A0" INNER JOIN "secco"."Equipo" "B0" ON "A0"."equipoId" = "B0"."id" WHERE "A0"."id" = <0>
+2021-05-05 16:27:17.434 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>
+2021-05-05 16:27:17.444 SELECT "B0"."id","B0"."tag","B0"."id","B0"."version","A0"."version" FROM "secco"."Equipo" "A0" LEFT OUTER JOIN "motors"."Motor" "B0" ON "A0"."id" = "B0"."equipoId" WHERE "A0"."id" = <0>
+2021-05-05 16:27:21.428 SELECT "A0"."denominacion","A0"."horometro","A0"."notes","A0"."version" FROM "secco"."Equipo" "A0" WHERE "A0"."id" = <0>

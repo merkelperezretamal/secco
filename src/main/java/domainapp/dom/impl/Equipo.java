@@ -20,6 +20,7 @@ package domainapp.dom.impl;
 
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
+import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.VersionStrategy;
 
 import com.google.common.collect.ComparisonChain;
@@ -68,6 +69,12 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     private String notes;
 
+    @Persistent(
+            mappedBy = "equipo",
+            dependentElement = "true"
+    )
+    @Getter @Setter
+    private Motor motor;
 
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo actualizarHorometro(final double horometro) {
@@ -106,6 +113,19 @@ public class Equipo implements Comparable<Equipo> {
                 .result();
     }
 
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Motor newMotor(final String tag) {
+        return repositoryService.persist(new Motor(this, tag));
+    }
+
+    @Action(
+            semantics = SemanticsOf.NON_IDEMPOTENT,
+            associateWith = "motors", associateWithSequence = "2"
+    )
+    public Equipo removeMotor(Motor motor) {
+        repositoryService.removeAndFlush(motor);
+        return this;
+    }
 
     @javax.jdo.annotations.NotPersistent
     @javax.inject.Inject
