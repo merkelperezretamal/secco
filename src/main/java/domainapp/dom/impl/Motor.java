@@ -1,13 +1,14 @@
 package domainapp.dom.impl;
 
-import com.google.common.collect.ComparisonChain;
-import lombok.Getter;
-import lombok.Setter;
-import org.apache.isis.applib.annotation.*;
-
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.VersionStrategy;
+
+import com.google.common.collect.ComparisonChain;
+
+import lombok.Getter;
+import lombok.Setter;
+import org.apache.isis.applib.annotation.*;
 
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "motors" )
 @javax.jdo.annotations.DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")

@@ -44,7 +44,7 @@ public class Equipos {
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
     @MemberOrder(sequence = "1")
-    public Equipo create(
+    public Equipo cargar(
             @Parameter(maxLength = 40)
             final String denominacion,
             @Parameter(maxLength = 40)
@@ -58,7 +58,7 @@ public class Equipos {
 
     @Action(semantics = SemanticsOf.SAFE)
     @MemberOrder(sequence = "2")
-    public List<Equipo> findByName(
+    public List<Equipo> buscarPorDenominacion(
             @Parameter(maxLength = 40)
             final String name) {
         TypesafeQuery<Equipo> q = isisJdoSupport.newTypesafeQuery(Equipo.class);
@@ -72,7 +72,7 @@ public class Equipos {
 
     @Action(semantics = SemanticsOf.SAFE, restrictTo = RestrictTo.PROTOTYPING)
     @MemberOrder(sequence = "3")
-    public List<Equipo> listAll() {
+    public List<Equipo> listarTodos() {
         return repositoryService.allInstances(Equipo.class);
     }
 

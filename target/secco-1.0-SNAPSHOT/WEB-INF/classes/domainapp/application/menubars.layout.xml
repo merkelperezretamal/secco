@@ -22,13 +22,13 @@
         <mb3:menu>
             <mb3:named>Equipos</mb3:named>
             <mb3:section>
-                <mb3:serviceAction objectType="secco.Equipos" id="create">
+                <mb3:serviceAction objectType="secco.Equipos" id="cargar">
                     <cpt:named>Cargar</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="secco.Equipos" id="findByName">
+                <mb3:serviceAction objectType="secco.Equipos" id="buscarPorDenominacion">
                     <cpt:named>Buscar por denominacion</cpt:named>
                 </mb3:serviceAction>
-                <mb3:serviceAction objectType="secco.Equipos" id="listAll">
+                <mb3:serviceAction objectType="secco.Equipos" id="listarTodos">
                     <cpt:named>Listar todos</cpt:named>
                 </mb3:serviceAction>
             </mb3:section>
