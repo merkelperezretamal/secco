@@ -48,8 +48,12 @@ public class Equipos {
             @Parameter(maxLength = 40)
             final String denominacion,
             @Parameter(maxLength = 40)
-            final double horometro) {
-        return repositoryService.persist(new Equipo(denominacion, horometro));
+            final double horometro,
+            @Parameter(maxLength = 40)
+            final double rpm,
+            @Parameter(maxLength = 40)
+            final double presionAceite) {
+        return repositoryService.persist(new Equipo(denominacion, horometro, rpm, presionAceite));
     }
 
     @Action(semantics = SemanticsOf.SAFE)

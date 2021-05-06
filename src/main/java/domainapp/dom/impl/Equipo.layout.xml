@@ -40,6 +40,17 @@
                                         <c:describedAs>Actualiza el horometro</c:describedAs>
                                     </c:action>
                                 </c:property>
+                                <c:property id="porcentajeDisponibilidad" namedEscaped="true"/>
+                                <c:property id="rpm" namedEscaped="true">
+                                    <c:action id="actualizarRpm">
+                                        <c:describedAs>Actualiza el RPM</c:describedAs>
+                                    </c:action>
+                                </c:property>
+                                <c:property id="presionAceite" namedEscaped="true">
+                                    <c:action id="actualizarPresionAceite">
+                                        <c:describedAs>Actualiza la presion del aceite</c:describedAs>
+                                    </c:action>
+                                </c:property>
                                 <c:property id="Notas" namedEscaped="true" multiLine="10" hidden="ALL_TABLES"/>
                             </c:fieldSet>
                         </bs3:col>

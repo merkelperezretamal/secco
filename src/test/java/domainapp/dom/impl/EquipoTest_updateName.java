@@ -29,7 +29,7 @@ public class EquipoTest_updateName {
     @Test
     public void happy_case() throws Exception {
         // given
-        final Equipo object = new Equipo("EQ001", 0);
+        final Equipo object = new Equipo("EQ001", 0, 1200, 40);
         assertThat(object.getDenominacion()).isEqualTo("EQ001");
         assertThat(object.getHorometro()).isEqualTo(0);
 

@@ -49,7 +49,7 @@ public class EquipoTest_delete {
     @Test
     public void happy_case() throws Exception {
         // given
-        final Equipo object = new Equipo("EQ001", 0);
+        final Equipo object = new Equipo("EQ001", 0, 1200, 40);
         object.titleService = mockTitleService;
         object.messageService = mockMessageService;
         object.repositoryService = mockRepositoryService;

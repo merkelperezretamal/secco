@@ -12,9 +12,9 @@ import javax.jdo.annotations.VersionStrategy;
 @javax.jdo.annotations.PersistenceCapable(identityType = IdentityType.DATASTORE, schema = "motors" )
 @javax.jdo.annotations.DatastoreIdentity(strategy = IdGeneratorStrategy.IDENTITY, column = "id")
 @javax.jdo.annotations.Version(strategy= VersionStrategy.DATE_TIME, column ="version")
+@javax.jdo.annotations.Unique(name="Motor_equipo_tag_UNQ", members = {"equipo","tag"})
 @DomainObject(auditing = Auditing.ENABLED)
 @DomainObjectLayout()  // causes UI events to be triggered
-@javax.jdo.annotations.Unique(name="Motor_equipo_tag_UNQ", members = {"equipo","tag"})
 public class Motor implements Comparable<Motor> {
 
     public Motor(Equipo equipo, String tag){
@@ -37,6 +37,16 @@ public class Motor implements Comparable<Motor> {
     @Property(editing = Editing.ENABLED)
     @Getter @Setter
     private String tag;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Property(editing = Editing.ENABLED)
+    @Getter @Setter
+    private double temperaturaAceite;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Property(editing = Editing.ENABLED)
+    @Getter @Setter
+    private double temperaturaAgua;
 
     @Override
     public String toString() {

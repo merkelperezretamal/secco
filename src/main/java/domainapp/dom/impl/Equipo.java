@@ -46,9 +46,11 @@ import java.util.Date;
 public class Equipo implements Comparable<Equipo> {
 
     public Equipo(final String denominacion,
-                  final double horometro) {
+                  final double horometro, final double rpm, final double presionAceite) {
         this.denominacion = denominacion;
         this.horometro = horometro;
+        this.rpm = rpm;
+        this.presionAceite = presionAceite;
     }
 
     public String title() {
@@ -63,6 +65,18 @@ public class Equipo implements Comparable<Equipo> {
 //    @Property(hidden = Where.EVERYWHERE) //Oculta la propiedad (para que no se vea cuando se actualiza por ejemplo)
     @Getter @Setter
     private double horometro;
+
+    @javax.jdo.annotations.Column(allowsNull = "true")
+    @Getter @Setter
+    private double porcentajeDisponibilidad;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Getter @Setter
+    private double rpm;
+
+    @javax.jdo.annotations.Column(allowsNull = "false")
+    @Getter @Setter
+    private double presionAceite;
 
     @javax.jdo.annotations.Column(allowsNull = "true", length = 4000)
     @Property(editing = Editing.ENABLED)
@@ -79,6 +93,18 @@ public class Equipo implements Comparable<Equipo> {
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo actualizarHorometro(final double horometro) {
         setHorometro(horometro);
+        return this;
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Equipo actualizarRpm(final double rpm) {
+        setRpm(rpm);
+        return this;
+    }
+
+    @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
+    public Equipo actualizarPresionAceite(final double presionAceite) {
+        setPresionAceite(presionAceite);
         return this;
     }
 
@@ -114,7 +140,7 @@ public class Equipo implements Comparable<Equipo> {
     }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
-    public Motor newMotor(final String tag) {
+    public Motor nuevoMotor(final String tag) {
         return repositoryService.persist(new Motor(this, tag));
     }
 
@@ -122,7 +148,7 @@ public class Equipo implements Comparable<Equipo> {
             semantics = SemanticsOf.NON_IDEMPOTENT,
             associateWith = "motors", associateWithSequence = "2"
     )
-    public Equipo removeMotor(Motor motor) {
+    public Equipo borrarMotor(Motor motor) {
         repositoryService.removeAndFlush(motor);
         return this;
     }
