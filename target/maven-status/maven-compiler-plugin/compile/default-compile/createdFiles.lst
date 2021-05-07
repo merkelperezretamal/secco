@@ -10,3 +10,5 @@ domainapp\dom\impl\QEquipo.class
 domainapp\webapp\SeccoApplication$1.class
 domainapp\dom\impl\SeccoFixtureScriptSpecProvider.class
 domainapp\webapp\SeccoApplication.class
+domainapp\dom\impl\QCompresor.class
+domainapp\dom\impl\Compresor.class

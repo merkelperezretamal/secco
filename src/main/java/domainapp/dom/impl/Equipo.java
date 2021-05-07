@@ -90,6 +90,13 @@ public class Equipo implements Comparable<Equipo> {
     @Getter @Setter
     private Motor motor;
 
+    @Persistent(
+            mappedBy = "equipo",
+            dependentElement = "true"
+    )
+    @Getter @Setter
+    private Compresor compresor;
+
     @Action(semantics = SemanticsOf.IDEMPOTENT, command = CommandReification.ENABLED, publishing = Publishing.ENABLED)
     public Equipo actualizarHorometro(final double horometro) {
         setHorometro(horometro);
@@ -107,18 +114,6 @@ public class Equipo implements Comparable<Equipo> {
         setPresionAceite(presionAceite);
         return this;
     }
-
-    public String default0UpdateName() {
-        return getDenominacion();
-    }
-    public double default1UpdateName() {
-        return getHorometro();
-    }
-
-//    @Property(notPersisted = true) //Agregado como propiedad derivada
-//    public String getName() {
-//        return getDenominacion();
-//    }
 
     @Action(semantics = SemanticsOf.NON_IDEMPOTENT_ARE_YOU_SURE)
     public void borrar() {
@@ -150,6 +145,20 @@ public class Equipo implements Comparable<Equipo> {
     )
     public Equipo borrarMotor(Motor motor) {
         repositoryService.removeAndFlush(motor);
+        return this;
+    }
+
+    @Action(semantics = SemanticsOf.NON_IDEMPOTENT)
+    public Compresor nuevoCompresor(final String tag) {
+        return repositoryService.persist(new Compresor(this, tag));
+    }
+
+    @Action(
+            semantics = SemanticsOf.NON_IDEMPOTENT,
+            associateWith = "compresors", associateWithSequence = "2"
+    )
+    public Equipo borrarCompresor(Compresor compresor) {
+        repositoryService.removeAndFlush(compresor);
         return this;
     }
 
