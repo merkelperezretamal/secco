@@ -35,7 +35,7 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
     public final NumericExpression<Double> presionSuccion1;
     public final NumericExpression<Double> presionSuccion2;
     public final NumericExpression<Double> presionSuccion3;
-    public final NumericExpression<Double> pD;
+    public final NumericExpression<Double> presionDescarga;
     public final NumericExpression<Double> caudalDiario;
 
     public QCompresor(PersistableExpression parent, String name, int depth)
@@ -56,7 +56,7 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
         this.presionSuccion1 = new NumericExpressionImpl<Double>(this, "presionSuccion1");
         this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
         this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
-        this.pD = new NumericExpressionImpl<Double>(this, "pD");
+        this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
         this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
     }
 
@@ -71,7 +71,7 @@ public class QCompresor extends PersistableExpressionImpl<Compresor> implements 
         this.presionSuccion1 = new NumericExpressionImpl<Double>(this, "presionSuccion1");
         this.presionSuccion2 = new NumericExpressionImpl<Double>(this, "presionSuccion2");
         this.presionSuccion3 = new NumericExpressionImpl<Double>(this, "presionSuccion3");
-        this.pD = new NumericExpressionImpl<Double>(this, "pD");
+        this.presionDescarga = new NumericExpressionImpl<Double>(this, "presionDescarga");
         this.caudalDiario = new NumericExpressionImpl<Double>(this, "caudalDiario");
     }
 }

@@ -72,7 +72,7 @@ public class Compresor implements Comparable<Compresor> {
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Property(editing = Editing.ENABLED)
     @Getter @Setter
-    private double pD;
+    private double presionDescarga;
 
     @javax.jdo.annotations.Column(allowsNull = "true")
     @Property(editing = Editing.ENABLED)
